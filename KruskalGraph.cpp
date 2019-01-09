@@ -128,19 +128,21 @@ void Kruskal( Graph g )
                     index[p[j].begin] = index[p[j].end] = i;
 
                 else if( (-1 == index[p[j].begin]) && (index[p[j].end] >= 0) ) {	//该边的尾end已在一个连通分量，头begin未加入过任何连通分量
-                    index[p[j].begin] = i;
-                    IndexEnd = index[p[j].end];
-                    for(int n=0; n<VertexNum; n++ )
-                        if( index[n] == IndexEnd )
-                            index[n] = i;
+//                    index[p[j].begin] = i;
+//                    IndexEnd = index[p[j].end];
+//                    for(int n=0; n<VertexNum; n++ )
+//                        if( index[n] == IndexEnd )
+//                            index[n] = i;
+                    index[p[j].begin] = index[p[j].end];
                 }
 
                 else if( (-1 == index[p[j].end]) && (index[p[j].begin] >= 0) ) {	//该边的头begin已在一个连通分量，尾end未加入过任何连通分量
-                    index[p[j].end] = i;
-                    IndexBegin = index[p[j].begin];
-                    for(int n=0; n<VertexNum; n++ )
-                        if( index[n] == IndexBegin )
-                            index[n] = i;
+//                    index[p[j].end] = i;
+//                    IndexBegin = index[p[j].begin];
+//                    for(int n=0; n<VertexNum; n++ )
+//                        if( index[n] == IndexBegin )
+//                            index[n] = i;
+                    index[p[j].end] =index[p[j].begin];
                 }
 
                 else {
